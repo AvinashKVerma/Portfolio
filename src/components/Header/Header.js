@@ -3,8 +3,9 @@ import "./Header.css";
 import { ReactComponent as Logo } from "../Resources/logo4.svg";
 import { ReactComponent as Logo1 } from "../Resources/logopb1.svg";
 import img from "../Resources/img36.png";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import GitHubIcon from "@mui/icons-material/GitHub";
+import Img1 from "../Resources/design1.png";
 
 function Header() {
   const logo = <Logo />;
@@ -172,6 +173,9 @@ function Header() {
 
   return (
     <>
+      <div className="navbar-image">
+        <img src={Img1} alt="" />
+      </div>
       <div className="navbar-wrapper">
         <ul className="navbar-list">
           <li className="li-logo">
@@ -179,7 +183,7 @@ function Header() {
               {logo}
             </a>
           </li>
-          <li className="socio">
+          {/* <li className="socio">
             <a
               className="socio-link linkedin"
               href="https://www.linkedin.com/in/avinash-verma-7836b0179/"
@@ -196,7 +200,7 @@ function Header() {
             >
               <GitHubIcon />
             </a>
-          </li>
+          </li> */}
           <li
             className={`nav-left-list ${isDropdownOpen ? "active" : ""}`}
             onMouseEnter={handleDropdownToggle}
@@ -206,7 +210,7 @@ function Header() {
               Home
               <i className={`arrow ${isDropdownOpen ? "active" : ""}`}></i>
             </a>
-            {isDropdownOpen && (
+            {/* {isDropdownOpen && (
               <div className="drop-grid" style={{ zIndex: 1 }}>
                 <div className="drop-row">
                   <div className="drop-col">
@@ -294,7 +298,7 @@ function Header() {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
           </li>
           <li
             className={`nav-list ${isDropdownOpen1 ? "active" : ""}`}
@@ -477,11 +481,6 @@ function Header() {
                 </li>
               </ul>
             )}
-          </li>
-          <li className="signin-link">
-            <a href="/#" className="sign-in">
-              Sign in
-            </a>
           </li>
         </ul>
       </div>

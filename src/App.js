@@ -1,6 +1,5 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import Testing from "./Testing";
 // import Feed from "./components/Feed";
 
 // import Footer from "./components/Footer/Footer";
@@ -11,10 +10,7 @@ function App() {
       <header className="App-header">
         <Header />
       </header>
-      <div className="feeed">
-        {/* <Feed /> */}
-        <Testing />
-      </div>
+      <div className="feeed">{/* <Feed /> */}</div>
       {/* <footer className="moreInsurance"><Footer /> </footer> */}
     </div>
   );
