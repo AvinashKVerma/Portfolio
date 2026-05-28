@@ -106,75 +106,67 @@ export default function ProjectsSection() {
         <h2 className="mb-12 font-bold text-3xl text-center">Projects</h2>
         <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
           {projects.length &&
-            projects.map(
-              (project) => (
-                console.log(project),
-                (
-                  <Card key={project._id} className="shadow-md rounded-2xl">
-                    <CardHeader>
-                      <div className="relative h-auto">
-                        <Image
-                          src={project.projectImage || "/placeholder.svg"}
-                          alt={project.projectTitle || "Project Image"}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col items-center gap-2">
-                        <div className="font-semibold text-2xl leading-none tracking-tight">
-                          {project.projectTitle}
-                        </div>
-                        <div className="text-muted-foreground text-sm">
-                          {project.projectDescription}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardBody>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {Array.isArray(project.projectTags) &&
-                          project.projectTags.map((tag) => (
-                            <Badge
-                              key={tag}
-                              className="bg-gray-100 text-gray-800"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
-                      </div>
-                    </CardBody>
-                    <CardFooter className="flex justify-end gap-4">
-                      <Button
-                        variant="bordered"
-                        size="sm"
-                        startContent={<FiGithub className="mr-2 w-4 h-4" />}
-                      >
-                        <Link
-                          href={project.projectRepo || "/"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Code
-                        </Link>
-                      </Button>
-                      <Button
-                        size="sm"
-                        startContent={
-                          <BsBoxArrowUpRight className="mr-2 w-4 h-4" />
-                        }
-                      >
-                        <Link
-                          href={project.projectDemo || "/"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Demo
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                )
-              )
-            )}
+            projects.map((project) => (
+              <Card key={project._id} className="shadow-md rounded-2xl">
+                <CardHeader>
+                  <div className="relative h-auto">
+                    <Image
+                      src={project.projectImage || "/placeholder.svg"}
+                      alt={project.projectTitle || "Project Image"}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="font-semibold text-2xl leading-none tracking-tight">
+                      {project.projectTitle}
+                    </div>
+                    <div className="text-muted-foreground text-sm">
+                      {project.projectDescription}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardBody>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {Array.isArray(project.projectTags) &&
+                      project.projectTags.map((tag) => (
+                        <Badge key={tag} className="bg-gray-100 text-gray-800">
+                          {tag}
+                        </Badge>
+                      ))}
+                  </div>
+                </CardBody>
+                <CardFooter className="flex justify-end gap-4">
+                  <Button
+                    variant="bordered"
+                    size="sm"
+                    startContent={<FiGithub className="mr-2 w-4 h-4" />}
+                  >
+                    <Link
+                      href={project.projectRepo || "/"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Code
+                    </Link>
+                  </Button>
+                  <Button
+                    size="sm"
+                    startContent={
+                      <BsBoxArrowUpRight className="mr-2 w-4 h-4" />
+                    }
+                  >
+                    <Link
+                      href={project.projectDemo || "/"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Demo
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
         </div>
       </motion.div>
     </section>

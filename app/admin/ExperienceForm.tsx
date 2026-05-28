@@ -43,7 +43,7 @@ export default function ExperienceForm() {
       const result = await res.json();
 
       if (result.success) {
-        console.log("Experience saved successfully:", result.data);
+        // console.log("Experience saved successfully:", result.data);
         // Add toast or reset form here
       } else {
         console.error("Save failed:", result.error);

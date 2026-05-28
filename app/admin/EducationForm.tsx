@@ -39,7 +39,7 @@ export default function EducationForm() {
       const result = await res.json();
 
       if (result.success) {
-        console.log("Education saved:", result.data);
+        // console.log("Education saved:", result.data);
         // Optional: reset form or show toast
       } else {
         console.error("Failed:", result.error);
